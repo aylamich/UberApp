@@ -1,4 +1,5 @@
 public class Viagem {
+    // Atributos
     private String localPartida;
     private String localDestino;
     private double distancia;
@@ -8,6 +9,7 @@ public class Viagem {
     private double avaliacao;
     private boolean finalizada; // Adicionado para verificar se a viagem foi finalizada
 
+    // Construtor
     public Viagem(String localPartida, String localDestino, double distancia, Usuario usuario) {
         this.localPartida = localPartida;
         this.localDestino = localDestino;
@@ -17,6 +19,7 @@ public class Viagem {
         this.finalizada = false; // Inicialmente, a viagem não está finalizada
     }
 
+    // Métodos
     public String getLocalPartida() {
         return localPartida;
     }

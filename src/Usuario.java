@@ -1,11 +1,14 @@
 import java.util.List;
 import java.util.ArrayList;
 
+// Classe filho, herda da Pessoa
 public class Usuario extends Pessoa {
+    // Atributos
     private String email;
     private String telefone;
     private List<Viagem> historicoViagens;
 
+    // Construtor
     public Usuario(String nome, String cpf, String email, String telefone) {
         super(nome, cpf);
         this.email = email;
@@ -13,6 +16,7 @@ public class Usuario extends Pessoa {
         this.historicoViagens = new ArrayList<>();
     }
 
+    // Métodos
     public void solicitarViagem(String partida, String destino, double distancia) {
         Viagem novaViagem = new Viagem(partida, destino, distancia, this);
         historicoViagens.add(novaViagem);

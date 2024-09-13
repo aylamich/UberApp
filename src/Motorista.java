@@ -1,8 +1,11 @@
+// Classe filho, herda da Pessoa
 public class Motorista extends Pessoa {
+    // Atributos
     private Veiculo veiculo;
     private double avaliacao;
     private int totalViagens;
 
+    // Construtor
     public Motorista(String nome, String cpf, Veiculo veiculo, double avaliacao, int totalViagens) {
         super(nome, cpf);
         this.veiculo = veiculo;
@@ -10,6 +13,7 @@ public class Motorista extends Pessoa {
         this.totalViagens = totalViagens;
     }
 
+    // Métodos
     public Veiculo getVeiculo() {
         return veiculo;
     }

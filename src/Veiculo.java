@@ -1,25 +1,25 @@
 public class Veiculo {
+    // Atributos
     private String modelo;
     private String placa;
     private String cor;
 
+    // Construtor
     public Veiculo(String modelo, String placa, String cor) {
         this.modelo = modelo;
         this.placa = placa;
         this.cor = cor;
     }
 
-    // Retorna o modelo do veículo
+    // Métodos
     public String getModelo() {
         return modelo;
     }
 
-    // Retorna a placa do veículo
     public String getPlaca() {
         return placa;
     }
 
-    // Exibe os detalhes do veículo
     public void exibirDetalhes() {
         System.out.println("Modelo: " + modelo);
         System.out.println("Placa: " + placa);

@@ -1,4 +1,9 @@
 import java.util.Scanner;
+// Objetos existentes: Pessoa (Classe Pai), Motorista (herda de pessoa), Usuario (herda de pessoa), Veiculo e Viagem
+/* Relações: Motorista -> Veiculo: um para um, um motorista tem um veiculo;
+Viagem -> Usuario: um para um, cada viagem tem um usuario; Viagem -> Motorista: um para um, uma viagem é aceita por um motorista;
+Usuario -> Viagem: um para muitos, um usuario pode ter varias viagens no historico.
+ */
 
 public class Main {
     public static void main(String[] args) {
@@ -26,7 +31,7 @@ public class Main {
             System.out.println("6. Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine();  // Limpar o buffer do scanner
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -36,7 +41,7 @@ public class Main {
                     String destino = scanner.nextLine();
                     System.out.print("Digite a distância (em km com virgula): ");
                     double distancia = scanner.nextDouble();
-                    scanner.nextLine();  // Limpar o buffer do scanner
+                    scanner.nextLine();
                     usuario.solicitarViagem(partida, destino, distancia);
                     viagemAtual = new Viagem(partida, destino, distancia, usuario);
                     break;
@@ -93,7 +98,7 @@ public class Main {
                                 System.out.println("A viagem já foi finalizada.");
                             }
                         } else {
-                            System.out.println("Ops, nenhum motorista aceitou sua viagem. Clique em Motorista Aceitar.");
+                            System.out.println("Ops, nenhum motorista aceitou sua viagem. Clique em: Motorista Aceitar Viagem.");
                         }
                     } else {
                         System.out.println("Nenhuma viagem para finalizar.");
