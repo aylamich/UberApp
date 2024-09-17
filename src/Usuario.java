@@ -19,7 +19,6 @@ public class Usuario extends Pessoa {
     // Métodos
     public void solicitarViagem(String partida, String destino, double distancia) {
         Viagem novaViagem = new Viagem(partida, destino, distancia, this);
-        historicoViagens.add(novaViagem);
         System.out.println("Viagem solicitada de " + partida + " para " + destino);
     }
 
@@ -32,8 +31,19 @@ public class Usuario extends Pessoa {
         }
     }
 
+    public void adicionarViagem(Viagem viagem) {
+        historicoViagens.add(viagem); // Adiciona a viagem ao histórico após o motorista aceitá-la
+    }
+
+    public void exibirHistoricoViagens() {
+        if (historicoViagens.isEmpty()) {
+            System.out.println("Histórico de viagens vazio.");
+        } else {
+            System.out.println("--- Histórico de Viagens ---");
+            for (Viagem viagem : historicoViagens) {
+                String nomeMotorista = (viagem.getMotorista() != null) ? viagem.getMotorista().getNome() : "Motorista não definido";
+                System.out.println("Partida: " + viagem.getLocalPartida() + ", Destino: " + viagem.getLocalDestino() + ", Motorista: " + nomeMotorista + ", Avaliação: " + viagem.getAvaliacao());
+            }
+        }
+    }
 }
-
-
-
-
